@@ -1,2 +1,14 @@
 ﻿# libParade
-A multi-platform download accelerator/manager library.
+A generic download accelerator/manager library.
+
+## Feature Set
+- [ ] Generic URL downloader
+- [ ] YouTube Downloader
+  - [ ] Video
+  - [ ] Playlist
+  - [ ] Channel
+- [ ] Spotify Downloader
+  - [ ] Track
+  - [ ] Album
+  - [ ] Playlist
+  - [ ] Artist
