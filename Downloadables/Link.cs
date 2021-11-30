@@ -10,11 +10,18 @@ namespace Parade.Downloadables
     {
         private readonly Metadata _metadata;
         private readonly LinkData _data;
-        public Link(string url)
+        private readonly string _location;
+        public string Location
+        {
+            get => _location;
+        }
+
+        public Link(string url, string location)
         {
             _metadata = new Metadata();
             _metadata.Source = url;
             _metadata.Handler = DownloadHandler.URL;
+            _location = location;
         }
 
         public double Progress {
