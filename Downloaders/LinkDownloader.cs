@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace Parade.Downloaders
+{
+    public class LinkDownloader : IDownloader
+    {
+        private readonly string[] ALLOWED_PROTOCOLS =
+        {
+            "http",
+            "https"
+        };
+        private List<DownloadThread> _workers;
+        private string _currentFile;
+        private uint _blockSize;
+
+        public DownloadHandler Handler => throw new NotImplementedException();
+
+        public LinkDownloader(uint blockSize = 5 * 1024^2)
+        {
+            /*
+             * def. blockSize = 5 * 1024^2 = 5 MiB
+             *      maxThreads = 16
+             */
+            _blockSize = blockSize;
+            _currentFile = "";
+            _workers = new List<DownloadThread>();
+        }
+
+        public void Download(IDownloadable downloadable)
+        {
+            if (!IsDownloadable(downloadable))
+                throw new Exception("WebDownloader cannot handle this protocol.");
+            using (HttpClient client = new())
+            {
+
+            }
+            throw new NotImplementedException();
+        }
+
+        public bool IsDownloadable(IDownloadable downloadable)
+        {
+            if (downloadable.Metadata.Source == "")
+                return false;
+            Metadata metadata = downloadable.Metadata;
+            Match regex = Regex.Match(downloadable.Metadata.Source, RegexPatterns.URL);
+
+            // default protocol for protocol-less links is https:
+            string protocol = "https";
+            if (regex.Groups[1].Success)
+            {
+                // protocol found
+                protocol = regex.Groups[1].Value;
+            }
+
+            // if protocol is within allowed protocols
+            return protocol.Contains(protocol);
+        }
+    }
+}

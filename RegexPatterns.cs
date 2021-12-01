@@ -9,5 +9,6 @@ namespace Parade
     internal static class RegexPatterns
     {
         public static readonly string Youtube = @"h?t?t?p?s?:?\/?\/?w?w?w\.?youtube.com\/(watch|playlist)\?(v|list)=(.+)";
+        public static readonly string URL = @"(?:(.+):\/\/)?(.*)";
     }
 }
