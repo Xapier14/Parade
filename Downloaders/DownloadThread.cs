@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Parade.Downloadables
+namespace Parade.Downloaders
 {
-    internal class LinkData
+    internal class DownloadThread
     {
-
     }
 }
