@@ -9,7 +9,7 @@ namespace Parade.Downloaders
 {
     internal class DownloadThread
     {
-        private Thread _thread;
+        private List<Thread> _threads;
         public DownloadThread()
         {
 

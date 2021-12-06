@@ -7,6 +7,10 @@ namespace Parade
     {
         private int _maxThreads;
         private Type[] _extraDownloaders;
+
+        public int MaxThreads { get => MaxThreads; }
+        public Type[] LoadedPlugins { get => _extraDownloaders; }
+
         public ParadeManager(int maxThreads = 12)
         {
             if (maxThreads <= 0)

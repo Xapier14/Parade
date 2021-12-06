@@ -8,8 +8,12 @@ namespace Parade
 {
     public interface IDownloader
     {
-        public DownloadHandler Handler { get; }
-        public void Download(IDownloadable downloadable);
+        public string Handler { get; }
+#nullable enable
+        public void Download(IDownloadable downloadable, string? destination);
         public static bool IsDownloadable(IDownloadable downloadable) => false;
+        public void Start(IDownloadable downloadable);
+        public void Stop(IDownloadable downloadable);
+        public void Abort(IDownloadable downloadable);
     }
 }

@@ -10,6 +10,7 @@ namespace Parade.Downloadables
     {
         private readonly Metadata _metadata;
         private readonly string _location;
+        public Status Status { get; set; }
         public string Location
         {
             get => _location;
@@ -19,7 +20,7 @@ namespace Parade.Downloadables
         {
             _metadata = new Metadata();
             _metadata.Source = url;
-            _metadata.Handler = DownloadHandler.URL;
+            _metadata.Handler = "Generic Link";
             _location = location;
         }
 

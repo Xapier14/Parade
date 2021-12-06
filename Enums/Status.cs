@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Parade
 {
-    public enum DownloadHandler
+    public enum Status
     {
-        URL,
-        Youtube,
-        Spotify
+        Unprocessed,
+        Processed,
+        Downloading,
+        Aborted,
+        Failed,
+        Paused,
+        Finished
     }
 }

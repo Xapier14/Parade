@@ -9,7 +9,8 @@ namespace Parade
     public class Metadata
     {
         public string Source { get; set; }
-        public DownloadHandler Handler { get; set; }
+        public string Handler { get; set; }
         public ushort MaxThreads { get; set; }
+        public long Size { get; set; }
     }
 }

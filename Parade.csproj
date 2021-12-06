@@ -3,10 +3,46 @@
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-		<AssemblyName>lib$(MSBuildProjectName)</AssemblyName>
+		<AssemblyName>libParade</AssemblyName>
+		<PackageId>libParade</PackageId>
+		<Authors>Xapier14</Authors>
+		<Company>Xapier14</Company>
+		<Product>libParade</Product>
+		<Description>A generic download manager.</Description>
+		<PackageProjectUrl></PackageProjectUrl>
+		<RepositoryUrl>www.github.com/Xapier14/Parade</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryType>git</RepositoryType>
 		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+		<GenerateTargetAssemblyTitleAttribute >false</GenerateTargetAssemblyTitleAttribute>
+		<GenerateTargetAssemblyCompanyAttribute >false</GenerateTargetAssemblyCompanyAttribute>
+		<GenerateTargetAssemblyConfigurationAttribute >false</GenerateTargetAssemblyConfigurationAttribute>
+		<GenerateTargetAssemblyFileVersionAttribute >false</GenerateTargetAssemblyFileVersionAttribute>
+		<GenerateTargetAssemblyInformationalVersionAttribute >false</GenerateTargetAssemblyInformationalVersionAttribute>
+		<GenerateTargetAssemblyProductAttribute >false</GenerateTargetAssemblyProductAttribute>
+		<GenerateTargetAssemblyVersionAttribute >false</GenerateTargetAssemblyVersionAttribute>
 	</PropertyGroup>
+
 	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 </Project>

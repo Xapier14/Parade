@@ -8,6 +8,7 @@ namespace Parade
 {
     public interface IDownloadable
     {
+        public Status Status { get; internal set; }
         public double Progress { get; }
         public string Location { get; }
         public Metadata Metadata { get; }
