@@ -33,13 +33,19 @@ namespace Parade
                     var method = downloader.GetMethod("IsDownloadable");
                     if (method != null)
                     {
-                        var result = method.Invoke(null, new object[] { downloadable });
-                        if (result.Equals(true))
-                            return true;
+                        try
+                        {
+                            var result = method.Invoke(null, new object[] { downloadable });
+                            if (result.Equals(true))
+                                return true;
+                        } catch (Exception ex)
+                        {
+
+                        }
                     }
                     return false;
                 }
-            ).ToArray().Union(_extraDownloaders);
+            ).ToArray();
 
             if (available.Count() > 0)
             {
