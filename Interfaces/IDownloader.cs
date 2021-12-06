@@ -10,6 +10,6 @@ namespace Parade
     {
         public DownloadHandler Handler { get; }
         public void Download(IDownloadable downloadable);
-        public bool IsDownloadable(IDownloadable downloadable);
+        public static bool IsDownloadable(IDownloadable downloadable) => false;
     }
 }

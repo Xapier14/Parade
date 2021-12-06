@@ -21,21 +21,19 @@ namespace Parade.Downloaders
 
         public DownloadHandler Handler => throw new NotImplementedException();
 
-        public LinkDownloader(uint blockSize = 5 * 1024^2)
+        public LinkDownloader(ParadeManager parade)
         {
             /*
              * def. blockSize = 5 * 1024^2 = 5 MiB
              *      maxThreads = 16
              */
-            _blockSize = blockSize;
-            _currentFile = "";
-            _workers = new List<DownloadThread>();
+            //_blockSize = blockSize;
         }
 
         public void Download(IDownloadable downloadable)
         {
             if (!IsDownloadable(downloadable))
-                throw new Exception("WebDownloader cannot handle this protocol.");
+                throw new Exception("LinkDownloader cannot handle this protocol.");
             using (HttpClient client = new())
             {
 
@@ -43,7 +41,7 @@ namespace Parade.Downloaders
             throw new NotImplementedException();
         }
 
-        public bool IsDownloadable(IDownloadable downloadable)
+        public static bool IsDownloadable(IDownloadable downloadable)
         {
             if (downloadable.Metadata.Source == "")
                 return false;
@@ -59,7 +57,7 @@ namespace Parade.Downloaders
             }
 
             // if protocol is within allowed protocols
-            return protocol.Contains(protocol);
+            return protocol.Contains(protocol.ToLower());
         }
     }
 }

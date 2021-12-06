@@ -9,7 +9,6 @@ namespace Parade.Downloadables
     public class Link : IDownloadable
     {
         private readonly Metadata _metadata;
-        private readonly LinkData _data;
         private readonly string _location;
         public string Location
         {
