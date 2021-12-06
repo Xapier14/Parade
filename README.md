@@ -14,6 +14,8 @@ Currently in an unusable state.
   - [ ] Album
   - [ ] Playlist
   - [ ] Artist
+- [ ] Plugin System
+  - [x] DLL Loader
 
 ## Dependencies
 - Youtube-DL
