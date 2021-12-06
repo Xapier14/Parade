@@ -10,7 +10,7 @@ namespace Parade.Downloaders
 {
     public class LinkDownloader : IDownloader
     {
-        private readonly string[] ALLOWED_PROTOCOLS =
+        private static readonly string[] ALLOWED_PROTOCOLS =
         {
             "http",
             "https"
@@ -57,7 +57,7 @@ namespace Parade.Downloaders
             }
 
             // if protocol is within allowed protocols
-            return protocol.Contains(protocol.ToLower());
+            return ALLOWED_PROTOCOLS.Contains(protocol.ToLower());
         }
     }
 }
