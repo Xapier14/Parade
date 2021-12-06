@@ -1,3 +1,6 @@
 [submodule "youtube-dl"]
 	path = youtube-dl
 	url = https://github.com/ytdl-org/youtube-dl.git
+[submodule "Parade-Youtube"]
+	path = Parade-Youtube
+	url = https://github.com/Xapier14/Parade-Youtube.git
